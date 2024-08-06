@@ -32,6 +32,9 @@ app.use(async (req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello World form om!');
 });
+app.get('/health', (req, res) => {
+  res.send('This is health api forserver checking');
+});
 
 app.listen(PORT, HOST, () => {
   console.log(`Server is running on http://${HOST}:${PORT}`);
