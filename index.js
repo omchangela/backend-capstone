@@ -13,7 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // MongoDB connection
 async function connectDB() {
   try {
-    const client = new MongoClient(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(MONGODB_URI);
     await client.connect();
     console.log('Connected to MongoDB');
     return client;
@@ -30,7 +30,7 @@ app.use(async (req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World form om!');
+  res.send('Hello World form om patel!');
 });
 app.get('/health', (req, res) => {
   res.send('This is health api forserver checking');
